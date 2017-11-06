@@ -7,9 +7,7 @@
     function get(id) {
         return document.getElementById(id);
     }
-    function getClass(cname) {
-        return document.getElementByClassName(cname);
-    }
+
 
     function addToTable(array) {
         var row = contactTable.insertRow();
@@ -30,13 +28,17 @@
         var contact = [fname, lname, email, phone];
         addToTable(contact);
 
-        getClass('form-control').value = '';
+        get('fname').value = "";
+        get('lname').value = "";
+        get('email').value = "";
+        get('phone').value = "";
 
     });
 
     var set;
+    var colors = ['red', 'blue', 'green', 'purple', 'yellow'];
     function setBackground() {
-        var colors = ['red', 'blue', 'green', 'purple', 'yellow'];
+
         document.body.style.backgroundColor = colors[i];
         ++i;
         if (i == colors.length) {
@@ -44,9 +46,18 @@
         }
 
     }
+    function setBackgroundRGB() {
+        var r = (Math.floor(Math.random() * 256));
+        var g = (Math.floor(Math.random() * 256));
+        var b = (Math.floor(Math.random() * 256));
+
+        document.body.style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+
+    }
     get('colors').addEventListener('click', function () {
         if (get('colors').innerHTML === 'start') {
-            set = setInterval(setBackground, 1000);
+            set = setInterval(setBackgroundRGB, 1000);
+
             get('colors').innerHTML = 'stop';
         }
         else if (get('colors').innerHTML === 'stop') {
