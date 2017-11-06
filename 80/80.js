@@ -19,7 +19,7 @@
 
 
     get('addToTable').addEventListener('click', function (event) {
-        //event.preventDefault();
+        event.preventDefault();
         var fname = get('fname').value;
         var lname = get('lname').value;
         var email = get('email').value;
