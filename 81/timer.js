@@ -7,7 +7,7 @@ library.timer = (function () {
     var min = document.getElementById('min');
     var startTime;
     var set;
-    var paused = false;
+    //var paused = false;
     var pausedTime = 0;
     function timer() {
         var currentTime = new Date();
@@ -15,7 +15,7 @@ library.timer = (function () {
         currMill += pausedTime;
         var currentSec = Math.floor(currMill / 1000);
         var currentMin = Math.floor(currentSec / 60);
-        mil.innerHTML = currMill;
+        mil.innerHTML = (currMill / 100) % 100;
         sec.innerHTML = currentSec;
         min.innerHTML = currentMin;
 
