@@ -1,5 +1,6 @@
 (function () {
     var i = 0;
+    var zIndexplace = 10;
     var String = '' + i + 'px';
     function get(id) {
         return document.getElementById(id);
@@ -21,11 +22,18 @@
         newDiv.style.left = 'calc(40% + ' + i + 'px)';
         newDiv.style.textAlign = 'center';
         newDiv.style.lineHeight = '200px';
-
+        newDiv.style.border = '1px solid blue';
         var newContent = document.createTextNode(get('message').value);
         newDiv.appendChild(newContent);
         document.body.appendChild(newDiv);
         i += 30;
+
+        newDiv.addEventListener('click', function () {
+            newDiv.style.zIndex = zIndexplace;
+            console.log('hi');
+            zIndexplace += 10;
+        });
+
     }
     function addModal() {
         var Div2 = document.createElement("div");
@@ -39,11 +47,6 @@
 
         document.body.appendChild(Div2);
     }
-    var allDivs = document.getElementsByTagName('div');
-    for (var x = 0; x < allDivs.length; x++) {
-        allDivs[i].addEventListener('click', function (event) {
-            event.style.zIndex = 50;
-        });
-    }
+
 
 }());
