@@ -3,6 +3,7 @@ var pcs = pcs || {};
 pcs.tools = (function () {
     "use strict";
     var display;
+    var data;
     function get(id) {
         return document.getElementById(id);
     }
@@ -31,27 +32,34 @@ pcs.tools = (function () {
 
             return {
                 setCss: function (property, value) {
-                    setCss(elem, property, value);
-                    return this;
+                    if (arguments.length === 2) {
+                        setCss(elem, property, value);
+                        return this;
+                    }
+                    else
+                        return window.getComputedStyle(elem).getPropertyValue(property);
+
                 },
                 pulsate: function () {
-                    var fontSize = 32,
-                        i = 1,
-                        //that = this,
-                        interval = setInterval(function () {
-                            if (i <= 5 || i > 15) {
-                                fontSize += 5;
-                            } else {
-                                fontSize -= 5;
-                            }
+                    var fontSize = window.getComputedStyle(elem).getPropertyValue('font-size');
+                    console.log(fontSize);
+                    var thenum = parseInt(fontSize);
+                    var i = 1;
 
-                            //that.setCss("fontSize", fontSize + 'px');
-                            setCss(elem, "fontSize", fontSize + 'px');
+                    var interval = setInterval(function () {
+                        if (i <= 5 || i > 15) {
+                            thenum += 5;
+                        } else {
+                            thenum -= 5;
+                        }
 
-                            if (i++ === 20) {
-                                clearInterval(interval);
-                            }
-                        }, 100);
+                        //that.setCss("fontSize", fontSize + 'px');
+                        setCss(elem, "fontSize", thenum + 'px');
+
+                        if (i++ === 20) {
+                            clearInterval(interval);
+                        }
+                    }, 100);
 
                     return this;
                 },
@@ -66,6 +74,13 @@ pcs.tools = (function () {
                 show: function () {
                     show(elem);
                     return this;
+                },
+                setData: function (theData) {
+                    data = theData;
+                    return this;
+                },
+                getData: function () {
+                    return data;
                 }
 
 

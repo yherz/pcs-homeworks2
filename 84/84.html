@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        h2 {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2 id="someHTML">Some HTML</h2>
+    <button id="theButton">Click me!</button>
+    <script src="84.js"></script>
+    <script>
+        var someHTML = pcs.tools.wrap("someHTML");
+        pcs.tools.wrap("theButton").click(function () {
+            someHTML.show().pulsate();
+        });
+        var someHTML = pcs.tools.wrap("someHTML").pulsate();
+        var theButton = pcs.tools.wrap("theButton");
+        theButton.setData(1);
+
+        console.log(theButton.getData());
+        theButton.click(function () {
+            theButton.setData(theButton.getData() + 1)
+            console.log(theButton.getData());
+        });
+        var someHTML = pcs.tools.wrap("someHTML").setCss('font-size');
+        console.log(someHTML);
+
+    </script>
+</body>
+
+</html>
