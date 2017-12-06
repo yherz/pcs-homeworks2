@@ -1,0 +1,17 @@
+[
+    {
+        "title": "pizza",
+        "img": "pizza.jpg",
+        "ingredient": "Dough, Sauce, Cheese"
+    },
+    {
+        "title": "hotdog",
+        "img": "hotdog.jpg",
+        "ingredient": "Bun, Hot Dog, Mustard"
+    },
+    {
+        "title": "chicken",
+        "img": "chicken.jpg",
+        "ingredient": "chicken, spices, water"
+    }
+]
