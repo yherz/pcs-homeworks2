@@ -1,0 +1,17 @@
+[
+    {
+        "title": "people walking",
+        "video": "video-1.mp4",
+        "poster": "poster.jpg"
+    },
+    {
+        "title": "coffee",
+        "video": "video2.mp4",
+        "poster": "poster2.jpg"
+    },
+    {
+        "title": "chicken",
+        "video": "https://www.youtube.com/watch?v=ZkBF0BvU6r0",
+        "poster": "rals.jpg"
+    }
+]
