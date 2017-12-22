@@ -29,7 +29,7 @@
                 slideNumber = 0;
             }
         }, 3000);
-
+        $('#slide').attr('src', loadedData[0].img);
     });
 
 }());
