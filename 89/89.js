@@ -8,7 +8,7 @@
             else {
                 slideNumber = loadedData.length - 1;
             }
-            $('#slide').attr('src', loadedData[slideNumber].img);
+            setImage(slideNumber);
         });
         $('#next').click(function () {
             if (slideNumber < loadedData.length - 1) {
@@ -17,11 +17,11 @@
             else {
                 slideNumber = 0;
             }
-            $('#slide').attr('src', loadedData[slideNumber].img);
+            setImage(slideNumber);
 
         });
         setInterval(function () {
-            $('#slide').attr('src', loadedData[slideNumber].img);
+            setImage(slideNumber);
             if (slideNumber < loadedData.length - 1) {
                 slideNumber++;
             }
@@ -29,7 +29,11 @@
                 slideNumber = 0;
             }
         }, 3000);
-        $('#slide').attr('src', loadedData[0].img);
-    });
 
+        function setImage(x) {
+            $('#slide').attr('src', loadedData[x].img);
+        }
+        $('#slide').attr('src', loadedData[0].img);
+
+    });
 }());
