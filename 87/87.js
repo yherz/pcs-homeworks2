@@ -5,7 +5,7 @@
     });
 
     function getRecipe(recipeName) {
-        $.get('78.php', function (loadedData) {
+        $.get('87.php', function (loadedData) {
             var parsed = JSON.parse(loadedData);
             parsed.forEach(function (elem) {
                 if (elem.title === recipeName) {

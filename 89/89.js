@@ -18,7 +18,6 @@
                 slideNumber = 0;
             }
             setImage(slideNumber);
-
         });
         setInterval(function () {
             setImage(slideNumber);
@@ -29,11 +28,9 @@
                 slideNumber = 0;
             }
         }, 3000);
-
         function setImage(x) {
             $('#slide').attr('src', loadedData[x].img);
         }
         $('#slide').attr('src', loadedData[0].img);
-
     });
 }());
