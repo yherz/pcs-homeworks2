@@ -33,4 +33,10 @@
         }
         $('#slide').attr('src', loadedData[0].img);
     });
+    console.log("hi");
+
+    // $.get("https://slipstream.homejunction.com/ws/avm?deliveryLine=209+South+Washington+St&zip=21231", function (data) {
+    $.get("proxy.php", { url: "https://slipstream.homejunction.com/ws/avm?deliveryLine=209+South+Washington+St&zip=21231" }, function (data) {
+        console.log(data);
+    });
 }());
